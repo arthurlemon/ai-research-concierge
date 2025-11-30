@@ -1,0 +1,8 @@
+{
+  "graphs": {
+    "DocMana Agent": "docmana.graph:app"
+  },
+  "python_version": "3.12",
+  "env": "./.env",
+  "dependencies": ["."]
+}

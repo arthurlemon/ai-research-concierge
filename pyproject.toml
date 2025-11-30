@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docmana"
+version = "0.1.0"
+description = "LangGraph-based AI Research Concierge demo"
+authors = [{name = "arthur"}]
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=0.2.0",
+    "langchain-core>=0.2.38",
+    "langchain-openai>=0.1.23",
+    "langchain-tavily>=0.2.13",
+    "langgraph>=0.5.4",
+    "pydantic>=2.7",
+    "tavily-python>=0.3.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.32.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.0",
+    "ruff>=0.14.7",
+]
+test = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "pytest-sugar>=1.0.0",
+]

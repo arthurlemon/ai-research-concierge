@@ -1,0 +1,22 @@
+repos:
+
+  # General hooks - apply to all files
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-toml
+        files: ^apps/api/.*\.toml$
+      - id: check-yaml
+
+  # Python tools - only for apps/api
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.4
+    hooks:
+      - id: ruff
+        name: ruff (linter)
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+        name: ruff (formatter)
